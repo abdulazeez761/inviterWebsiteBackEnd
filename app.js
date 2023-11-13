@@ -8,7 +8,7 @@ const app = express();
 
 app.use(bodyParser.json());
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'https://invitationwebsitefrontend-production.up.railway.app/',
     credentials: true,
     optionSuccessStatus: 200,
     methods: ["GET", "POST"]
