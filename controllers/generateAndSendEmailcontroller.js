@@ -208,7 +208,7 @@ exports.generateAndSendEmail = async (req, res) => {
     <p>We are thrilled to announce the launch of our first-ever Vienna Advantage Arabia Event and are excited to have you join us.</p>
     <p>Your presence at this event is invaluable, and we can't wait to share this remarkable experience with you.</p>
     <p>If you encounter any issues or have questions, feel free to reach out.</p>
-    <a href="[Your Registration Link]" class="button">Confirm Registration</a>
+    <a href="https://invitationwebsitefrontend-production.up.railway.app/" class="button">Confirm Registration</a>
     <p class="footer">Looking forward to seeing you at the VA Arabia Event!<br>Best regards,</p>
   </div>
 </body>
