@@ -26,14 +26,13 @@ exports.generateAndSendEmail = async (req, res) => {
     .replace(/,/g, ',\n')
     .replace(/:/g, ': ');
   const qrCode = qr.image(cleanedString, { type: 'png' });
-
   const transporter = nodemailer.createTransport({
-    host: "pro.eu.turbo-smtp.com",
-    port: 465,
-    secure: false,
+    host: "smtp-mail.outlook.com",
+    port: 587,
+    requireTLS: true,
     auth: {
       user: "event@viennaadvantage.com",
-      pass: "3GqneS1J",
+      pass: "Mog21498",
     },
   });
 
