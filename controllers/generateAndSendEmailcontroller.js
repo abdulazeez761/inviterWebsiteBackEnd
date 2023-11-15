@@ -29,7 +29,7 @@ exports.generateAndSendEmail = async (req, res) => {
 
   const transporter = nodemailer.createTransport({
     host: "pro.eu.turbo-smtp.com",
-    port: 465,
+    port: 465 || 25,
     secure: true,
     auth: {
       user: "event@viennaadvantage.com",
@@ -39,11 +39,10 @@ exports.generateAndSendEmail = async (req, res) => {
 
   // Send an email with the QR code embedded in the HTML content
   const mailOptions = {
-    from: 'event@viennaadvantage.com',
+    from: 'viennaadvantage <event@viennaadvantage.com>',
     to: userInfo.email,
     subject: 'Your QR Code',
-    html: `
-           
+    html: `          
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -127,7 +126,6 @@ exports.generateAndSendEmail = async (req, res) => {
   </div>
 </body>
 </html>
-
         `,
     attachments: [
       {
@@ -138,7 +136,7 @@ exports.generateAndSendEmail = async (req, res) => {
     ],
   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
+  await transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error('Error sending email:', error);
       res.status(500).json({ message: 'Email could not be sent.' });
@@ -146,6 +144,7 @@ exports.generateAndSendEmail = async (req, res) => {
 
       res.json({ message: 'Email sent successfully.' });
     }
+
   });
 
 }
