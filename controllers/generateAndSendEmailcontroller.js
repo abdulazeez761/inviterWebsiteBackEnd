@@ -30,7 +30,7 @@ exports.generateAndSendEmail = async (req, res) => {
   const transporter = nodemailer.createTransport({
     host: "pro.eu.turbo-smtp.com",
     port: 465,
-    secure: true,
+    secure: false,
     auth: {
       user: "event@viennaadvantage.com",
       pass: "3GqneS1J",
