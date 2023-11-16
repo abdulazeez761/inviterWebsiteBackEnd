@@ -125,7 +125,7 @@ exports.generateAndSendEmail = async (req, res) => {
     <p>The agenda is designed to offer you an insightful and delightful experience, brimming with opportunities to network, learn, and enjoy.</p>
     <p>Thank you for gracing us with your presence. Your contribution, whether through discussions, collaborations, or simply by being here, is invaluable to us.</p>
     <p>Welcome to a day filled with innovation, camaraderie, and the spirit of Vienna Advantage Arabia. We hope you leave not only inspired but also connected to the vision we proudly uphold.</p>
-    <a href="https://www.viennaadvantage.com/" class="button">More Details</a>
+    
     <p class="footer">Best regards,<br>The Vienna Advantage Arabia Team</p>
   </div>
 </body>
