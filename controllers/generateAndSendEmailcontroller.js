@@ -26,13 +26,7 @@ exports.generateAndSendEmail = async (req, res) => {
     .replace(/,/g, ',\n')
     .replace(/:/g, ': ');
   const qrCode = qr.image(cleanedString, { type: 'png' });
-//   const transporter = nodemailer.createTransport({
-//   service: 'gmail',
-//   auth: {
-//     user: 'viennaadvantage00@gmail.com',
-//     pass: 'orby gowz adub lpnd'
-//   }
-// });
+
 
   let transporter = nodemailer.createTransport({
     host: 'smtp.office365.com',
