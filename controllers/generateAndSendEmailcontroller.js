@@ -26,14 +26,27 @@ exports.generateAndSendEmail = async (req, res) => {
     .replace(/,/g, ',\n')
     .replace(/:/g, ': ');
   const qrCode = qr.image(cleanedString, { type: 'png' });
-  const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'viennaadvantage00@gmail.com',
-    pass: 'orby gowz adub lpnd'
-  }
-});
+//   const transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: 'viennaadvantage00@gmail.com',
+//     pass: 'orby gowz adub lpnd'
+//   }
+// });
 
+  let transporter = nodemailer.createTransport({
+    host: 'smtp.office365.com',
+    secure: false,
+    port: '587',
+
+    auth: {
+      user: "reem.loubani@viennaadvantage.com",
+      pass: "Banivienna@#2023",
+    }, tls: {
+      minVersion: "TLSv1.2",
+      rejectUnauthorized: false,
+    },
+  });
   // Send an email with the QR code embedded in the HTML content
   const mailOptions = {
     from: 'viennaadvantage',
